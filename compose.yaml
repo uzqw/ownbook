@@ -1,14 +1,14 @@
 services:
-  ebook-reader-uzqw:
-    image: ${DOCKER_IMAGE:-ebook-reader-uzqw:local}
+  ownbook:
+    image: ${DOCKER_IMAGE:-ownbook:local}
     user: '${APP_UID:-${HOST_UID:-1000}}:${APP_GID:-${HOST_GID:-1000}}'
     # Host publishing stays off: the platform Caddy route on host 18094 owns
     # that port and reverse-proxies to this service over cicd-observability.
     # ports:
     #   - '${DOCKER_HOST_PORT:-18094}:18093'
     volumes:
-      - ${DOCKER_PB_DATA_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ebook-reader/pb_data}:/app/pb_data
-      - ${DOCKER_BUILDER_CACHE_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ebook-reader/docker-build-cache}:/pi-build-cache
+      - ${DOCKER_PB_DATA_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ownbook/pb_data}:/app/pb_data
+      - ${DOCKER_BUILDER_CACHE_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ownbook/docker-build-cache}:/pi-build-cache
     environment:
       TZ: ${TZ:-${HOST_TZ:-UTC}}
       POCKETBASE_HOST: 0.0.0.0

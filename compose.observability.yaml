@@ -1,8 +1,8 @@
 services:
-  ebook-reader-uzqw:
+  ownbook:
     labels:
       uzqw.observe: 'true'
-      uzqw.app: ebook-reader
+      uzqw.app: ownbook
     networks:
       - cicd-observability
 

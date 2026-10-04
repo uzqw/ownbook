@@ -1,5 +1,5 @@
 services:
-  ebook-reader-uzqw:
+  ownbook:
     build:
       context: .
       dockerfile: Dockerfile
