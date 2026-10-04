@@ -7,7 +7,7 @@ services:
     # ports:
     #   - '${DOCKER_HOST_PORT:-18094}:18093'
     volumes:
-      - ${DOCKER_PB_DATA_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ownbook/pb_data}:/app/pb_data
+      - ${DOCKER_PB_DATA_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ebook-reader/pb_data}:/app/pb_data
       - ${DOCKER_BUILDER_CACHE_PATH:-${XDG_DATA_HOME:-${HOME}/.local/share}/uzqw/apps/ownbook/docker-build-cache}:/pi-build-cache
     environment:
       TZ: ${TZ:-${HOST_TZ:-UTC}}
